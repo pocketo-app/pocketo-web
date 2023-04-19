@@ -7,9 +7,10 @@
 		"dev": "vite",
 		"build": "vite build",
 		"serve": "vite preview",
-		"lint": "prettier --check . && eslint .",
-		"prettier": "prettier --write .",
-		"eslint": "eslint --fix .",
+		"lint": "npm run prettier && npm run eslint",
+		"prettier": "prettier --check .",
+		"eslint": "eslint --max-warnings 0 .",
+		"test": "echo There are no tests",
 		"prepare": "husky install"
 	},
 	"license": "MIT",
