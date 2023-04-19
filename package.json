@@ -25,6 +25,8 @@
 		"vite-plugin-solid": "^2.5.0"
 	},
 	"dependencies": {
+		"dayjs": "^1.11.7",
+		"normalize.css": "^8.0.1",
 		"solid-js": "^1.6.10"
 	}
 }
