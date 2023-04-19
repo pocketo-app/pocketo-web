@@ -1,7 +1,7 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.0.0",
-  "description": "",
+  "name": "pocketo-web",
+  "version": "0.1.0",
+  "description": "Pocketo web app",
   "scripts": {
     "start": "vite",
     "dev": "vite",
