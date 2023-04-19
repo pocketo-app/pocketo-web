@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		"strict": true,
 		"target": "ESNext",
 		"module": "ESNext",
 		"moduleResolution": "node",
@@ -10,6 +9,18 @@
 		"jsxImportSource": "solid-js",
 		"types": ["vite/client"],
 		"noEmit": true,
-		"isolatedModules": true
+		"isolatedModules": true,
+		"importHelpers": false,
+		"skipLibCheck": true,
+		"strict": true,
+		"allowUnusedLabels": false,
+		"allowUnreachableCode": false,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"exactOptionalPropertyTypes": true,
+		"forceConsistentCasingInFileNames": true
 	}
 }
