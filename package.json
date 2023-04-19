@@ -9,13 +9,16 @@
 		"serve": "vite preview",
 		"lint": "prettier --check . && eslint .",
 		"prettier": "prettier --write .",
-		"eslint": "eslint --fix ."
+		"eslint": "eslint --fix .",
+		"prepare": "husky install"
 	},
 	"license": "MIT",
 	"devDependencies": {
 		"eslint": "^8.38.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-solid": "^0.12.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.1",
 		"prettier": "^2.8.7",
 		"vite": "^4.1.1",
 		"vite-plugin-solid": "^2.5.0"
