@@ -1,19 +1,30 @@
 {
-  "name": "pocketo-web",
-  "version": "0.1.0",
-  "description": "Pocketo web app",
-  "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "vite": "^4.1.1",
-    "vite-plugin-solid": "^2.5.0"
-  },
-  "dependencies": {
-    "solid-js": "^1.6.10"
-  }
+	"name": "pocketo-web",
+	"version": "0.1.0",
+	"description": "Pocketo web app",
+	"scripts": {
+		"start": "vite",
+		"dev": "vite",
+		"build": "vite build",
+		"serve": "vite preview",
+		"lint": "npm run prettier && npm run eslint",
+		"prettier": "prettier --check .",
+		"eslint": "eslint --max-warnings 0 .",
+		"test": "echo There are no tests",
+		"prepare": "husky install"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "^8.38.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-solid": "^0.12.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.1",
+		"prettier": "^2.8.7",
+		"vite": "^4.1.1",
+		"vite-plugin-solid": "^2.5.0"
+	},
+	"dependencies": {
+		"solid-js": "^1.6.10"
+	}
 }
