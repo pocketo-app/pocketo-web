@@ -2,12 +2,15 @@
 # Even if there is no COPY ALL statement in your Dockerfile
 # https://codefresh.io/blog/not-ignore-dockerignore-2/
 
-# .gitignore
-private/
-node_modules/
-dist/
-.vscode/
-.idea/
-.DS_Store
-.env
-.env.*
+# Excludes all files and folders by default
+*/
+*.*
+
+# Includes these files and folders, Dockerfile needs them
+!package.json
+!package-lock.json
+!index.html
+!vite.config.js
+!docker/
+!public/
+!src/
