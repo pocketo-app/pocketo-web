@@ -5,9 +5,9 @@ name: Dev workflow
 
 on:
   push:
-    branches: ['dev', 'setup/ci-cd']
+    branches: ['dev']
   pull_request:
-    branches: ['dev', 'setup/ci-cd']
+    branches: ['dev']
 
 permissions:
   contents: read
@@ -19,18 +19,14 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    runs-on: ubuntu-22.04 # Latest LTS
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Set up Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '18.16.0'
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
@@ -51,7 +47,7 @@ jobs:
         run: docker image push "${{ vars.DOCKER_USERNAME }}/${{ vars.DOCKER_IMAGE_NAME }}:dev-${GITHUB_SHA::7}"
   deploy:
     needs: [build]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # Latest LTS
     steps:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.9
