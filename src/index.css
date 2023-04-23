@@ -9,3 +9,10 @@
 .p-half {
 	padding: var(--rhythm-half) !important;
 }
+
+/* Override default */
+
+html {
+	/* scrollbar-gutter: stable; */
+	overflow-y: scroll;
+}
