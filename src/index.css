@@ -1,3 +1,9 @@
+/* Custom CSS */
+
+.inline-group > *:not(:last-child) {
+	margin-right: var(--rhythm-fourth);
+}
+
 /* Cutestrap CSS extended */
 
 .p-half {

@@ -1,7 +1,17 @@
-import AppVersion from './component/AppVersion'
+import Header from './layout/Header'
+import Main from './layout/Main'
 
 function App() {
-	return <AppVersion />
+	return (
+		<>
+			<div style={{ 'background-color': 'white' }}>
+				<Header />
+			</div>
+			<div>
+				<Main />
+			</div>
+		</>
+	)
 }
 
 export default App
