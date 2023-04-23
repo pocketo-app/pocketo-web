@@ -1,0 +1,5 @@
+/* Cutestrap CSS extended */
+
+.p-half {
+	padding: var(--rhythm-half) !important;
+}
