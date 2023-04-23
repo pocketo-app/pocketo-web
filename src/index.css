@@ -4,6 +4,27 @@
 	margin-right: var(--rhythm-fourth);
 }
 
+.shadow {
+	box-shadow: 0 0 var(--rhythm-fourth) var(--color-neutral-tint3);
+}
+
+.sticky-top {
+	position: sticky;
+	top: 0;
+}
+
+.on-top-1 {
+	z-index: 100;
+}
+
+.on-top-2 {
+	z-index: 200;
+}
+
+.on-top-3 {
+	z-index: 300;
+}
+
 /* Cutestrap CSS extended */
 
 .p-half {
