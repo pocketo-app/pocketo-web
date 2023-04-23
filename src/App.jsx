@@ -3,8 +3,8 @@ import Main from './layout/Main'
 
 function App() {
 	const headerStyle = {
-		'background-color': 'white',
-		'border-bottom': '1px solid var(--color-neutral-tint2)',
+		'background-color': 'var(--color-neutral-tint5)',
+		'border-bottom': '1px solid var(--color-neutral-tint1)',
 	}
 	return (
 		<>
