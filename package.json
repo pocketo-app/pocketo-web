@@ -4,7 +4,7 @@
 	"description": "Pocketo web app",
 	"scripts": {
 		"start": "vite",
-		"dev": "vite",
+		"dev": "vite --host",
 		"build": "vite build",
 		"serve": "vite preview",
 		"lint": "npm run prettier && npm run eslint",
