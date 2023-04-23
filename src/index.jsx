@@ -1,6 +1,7 @@
 /* @refresh reload */
 import { render } from 'solid-js/web'
 
+import 'cutestrap/dist/css/cutestrap.css'
 import './index.css'
 import App from './App'
 
