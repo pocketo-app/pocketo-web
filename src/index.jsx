@@ -1,5 +1,6 @@
 /* @refresh reload */
 import { render } from 'solid-js/web'
+import { ErrorBoundary } from 'solid-js'
 import { Router } from '@solidjs/router'
 
 import 'cutestrap/dist/css/cutestrap.css'
@@ -16,9 +17,16 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(
 	() => (
-		<Router>
-			<App />
-		</Router>
+		<ErrorBoundary fallback={handleComponentError}>
+			<Router>
+				<App />
+			</Router>
+		</ErrorBoundary>
 	),
 	root
 )
+
+function handleComponentError(err) {
+	// Auto log error to console and skip render the component
+	return err
+}
