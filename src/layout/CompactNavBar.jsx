@@ -1,6 +1,6 @@
 import { useNavigate } from '@solidjs/router'
 
-import CompactNavTab from '../component/CompactNavTab'
+import CompactNavTab from '@/component/CompactNavTab'
 
 export default function CompactNavBar() {
 	const navigate = useNavigate()

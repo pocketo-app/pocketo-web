@@ -5,7 +5,7 @@ import { Router } from '@solidjs/router'
 
 import 'cutestrap/dist/css/cutestrap.css'
 import './index.css'
-import App from './App'
+import App from '@/App'
 
 const root = document.getElementById('root')
 

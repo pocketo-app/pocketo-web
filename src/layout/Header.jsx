@@ -1,6 +1,6 @@
-import CompactNavBar from './CompactNavBar'
-import NavBar from './NavBar'
-import AddBookmarkBox from '../component/AddBookmarkBox'
+import CompactNavBar from '@/layout/CompactNavBar'
+import NavBar from '@/layout/NavBar'
+import AddBookmarkBox from '@/component/AddBookmarkBox'
 
 import '../css/Header.responsive.css'
 

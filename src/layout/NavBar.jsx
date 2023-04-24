@@ -1,4 +1,4 @@
-import NavTab from '../component/NavTab'
+import NavTab from '@/component/NavTab'
 
 export default function NavBar() {
 	return (

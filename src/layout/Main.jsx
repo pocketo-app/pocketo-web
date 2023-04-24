@@ -1,6 +1,6 @@
 import { Routes, Route } from '@solidjs/router'
 
-import AppVersion from '../component/AppVersion'
+import AppVersion from '@/component/AppVersion'
 
 export default function Main() {
 	return (
