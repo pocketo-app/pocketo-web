@@ -8,6 +8,7 @@ export default function Main() {
 			<Routes>
 				<Route path="/collections" element={<p>Collections page</p>} />
 				<Route path="/more" element={<p>More page</p>} />
+				<Route path="/*" element={<p>Not found page</p>} />
 			</Routes>
 			<AppVersion />
 		</main>
