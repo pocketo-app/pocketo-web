@@ -1,0 +1,42 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Pull request check
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+# Cannot declare a global env var which contains GITHUB_SHA env var
+# Because GITHUB_SHA only available to every step (not job or workflow)
+# Cannot use ${GITHUB_SHA::7} as env value, always specify it in a command
+# Because the "::7" part only evaluated at runtime, not in an assignment
+
+jobs:
+  check-code:
+    runs-on: ubuntu-22.04 # Latest LTS
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+      - name: Set up Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.16.0'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run code linting
+        run: npm run lint
+      - name: Run tests
+        run: npm test
+  build-image:
+    runs-on: ubuntu-22.04 # Latest LTS
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+      - name: Build Docker image
+        env:
+          DOCKER_BUILDKIT: 1
+        run: docker image build -t "${{ vars.DOCKER_USERNAME }}/${{ vars.DOCKER_IMAGE_NAME }}:dev-${GITHUB_SHA::7}" .

@@ -1,12 +1,10 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Dev workflow
+name: Staging deploy
 
 on:
-  push:
-    branches: ['dev']
-  pull_request:
+  push: # On push commits and merge a pull request
     branches: ['dev']
 
 permissions:
@@ -18,7 +16,7 @@ permissions:
 # Because the "::7" part only evaluated at runtime, not in an assignment
 
 jobs:
-  build:
+  check-code:
     runs-on: ubuntu-22.04 # Latest LTS
     steps:
       - name: Check out the repository
@@ -34,6 +32,12 @@ jobs:
         run: npm run lint
       - name: Run tests
         run: npm test
+  build-push-image:
+    needs: ['check-code']
+    runs-on: ubuntu-22.04 # Latest LTS
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
       - name: Build Docker image
         env:
           DOCKER_BUILDKIT: 1
@@ -46,7 +50,7 @@ jobs:
       - name: Push Docker image
         run: docker image push "${{ vars.DOCKER_USERNAME }}/${{ vars.DOCKER_IMAGE_NAME }}:dev-${GITHUB_SHA::7}"
   deploy:
-    needs: [build]
+    needs: ['check-code', 'build-push-image']
     runs-on: ubuntu-22.04 # Latest LTS
     steps:
       - name: SSH Remote Commands
