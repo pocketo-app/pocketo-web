@@ -1,5 +1,5 @@
 # pocketo-web
 
-[![Dev workflow](https://github.com/pocketo-app/pocketo-web/actions/workflows/dev.yml/badge.svg)](https://github.com/pocketo-app/pocketo-web/actions/workflows/dev.yml)
+[![Staging deploy](https://github.com/pocketo-app/pocketo-web/actions/workflows/staging-deploy.yml/badge.svg)](https://github.com/pocketo-app/pocketo-web/actions/workflows/staging-deploy.yml)
 
 Pocketo web app
