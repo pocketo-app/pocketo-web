@@ -2,7 +2,7 @@ import { Routes, Route } from '@solidjs/router'
 
 import AppVersion from '../component/AppVersion'
 
-function Main() {
+export default function Main() {
 	return (
 		<main class="wrapper -wide p-half">
 			<Routes>
@@ -13,5 +13,3 @@ function Main() {
 		</main>
 	)
 }
-
-export default Main

@@ -2,7 +2,7 @@ import { useNavigate } from '@solidjs/router'
 
 import CompactNavTab from '../component/CompactNavTab'
 
-function CompactNavBar() {
+export default function CompactNavBar() {
 	const navigate = useNavigate()
 	const onChangeTab = (event) => {
 		const href = event.target.value
@@ -21,5 +21,3 @@ function CompactNavBar() {
 		</label>
 	)
 }
-
-export default CompactNavBar

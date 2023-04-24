@@ -4,7 +4,7 @@ import AddBookmarkBox from '../component/AddBookmarkBox'
 
 import '../css/Header.responsive.css'
 
-function Header() {
+export default function Header() {
 	return (
 		<header class="wrapper -wide p-half clearfix">
 			<div class="CompactNavBar">
@@ -19,5 +19,3 @@ function Header() {
 		</header>
 	)
 }
-
-export default Header

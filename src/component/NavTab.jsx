@@ -1,7 +1,7 @@
 import { mergeProps } from 'solid-js'
 import { A, useMatch } from '@solidjs/router'
 
-function NavTab(rawProps) {
+export default function NavTab(rawProps) {
 	const props = mergeProps({ href: '', text: '', count: 0 }, rawProps)
 	const match = useMatch(() => props.href)
 
@@ -15,5 +15,3 @@ function NavTab(rawProps) {
 		</A>
 	)
 }
-
-export default NavTab

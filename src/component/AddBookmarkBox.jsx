@@ -1,6 +1,6 @@
 import { mergeProps } from 'solid-js'
 
-function AddBookmarkBox(rawProps) {
+export default function AddBookmarkBox(rawProps) {
 	const props = mergeProps({ title: '', placeholder: '' }, rawProps)
 	return (
 		<label class="field mb-zero">
@@ -9,5 +9,3 @@ function AddBookmarkBox(rawProps) {
 		</label>
 	)
 }
-
-export default AddBookmarkBox

@@ -1,6 +1,6 @@
 import NavTab from '../component/NavTab'
 
-function NavBar() {
+export default function NavBar() {
 	return (
 		<nav class="inline-group">
 			<NavTab href="/collections" text="Collections" />
@@ -8,5 +8,3 @@ function NavBar() {
 		</nav>
 	)
 }
-
-export default NavBar
