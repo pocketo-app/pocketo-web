@@ -9,11 +9,6 @@ on:
 permissions:
   contents: read
 
-# Cannot declare a global env var which contains GITHUB_SHA env var
-# Because GITHUB_SHA only available to every step (not job or workflow)
-# Cannot use ${GITHUB_SHA::7} as env value, always specify it in a command
-# Because the "::7" part only evaluated at runtime, not in an assignment
-
 jobs:
   check-code:
     runs-on: ubuntu-22.04 # Latest LTS
@@ -31,12 +26,5 @@ jobs:
         run: npm run lint
       - name: Run tests
         run: npm test
-  build-image:
-    runs-on: ubuntu-22.04 # Latest LTS
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@v3
-      - name: Build Docker image
-        env:
-          DOCKER_BUILDKIT: 1
-        run: docker image build -t "${{ vars.DOCKER_USERNAME }}/${{ vars.DOCKER_IMAGE_NAME }}:dev-${GITHUB_SHA::7}" .
+      - name: Build project
+        run: npm run build
