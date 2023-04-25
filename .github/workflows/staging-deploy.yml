@@ -35,6 +35,9 @@ jobs:
   build-push-image:
     needs: ['check-code']
     runs-on: ubuntu-22.04 # Latest LTS
+    environment:
+      name: staging
+      url: https://app.pocketo.win
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
@@ -52,6 +55,9 @@ jobs:
   deploy:
     needs: ['check-code', 'build-push-image']
     runs-on: ubuntu-22.04 # Latest LTS
+    environment:
+      name: staging
+      url: https://app.pocketo.win
     steps:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.9
