@@ -1,6 +1,9 @@
+import { lazy } from 'solid-js'
 import { Routes, Route } from '@solidjs/router'
 
 import AppVersion from '@/component/AppVersion'
+
+const NotFoundPage = lazy(() => import('@/page/NotFoundPage'))
 
 export default function Main() {
 	return (
@@ -8,7 +11,7 @@ export default function Main() {
 			<Routes>
 				<Route path="/collections" element={<p>Collections page</p>} />
 				<Route path="/more" element={<p>More page</p>} />
-				<Route path="/*" element={<p>Not found page</p>} />
+				<Route path="/*" component={NotFoundPage} />
 			</Routes>
 			<AppVersion />
 		</main>
